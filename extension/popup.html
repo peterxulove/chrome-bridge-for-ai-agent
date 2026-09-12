@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  :root { color-scheme: light; }
+  body {
+    width: 320px; margin: 0; padding: 14px 16px 16px;
+    font: 13px/1.6 -apple-system, "PingFang SC", system-ui, sans-serif; color: #1a1a1a;
+  }
+  h1 { font-size: 14px; margin: 0 0 10px; display: flex; align-items: center; gap: 7px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: #c0392b; flex: none; }
+  .dot.on { background: #12a150; }
+  .row { display: flex; justify-content: space-between; gap: 10px; padding: 3px 0; }
+  .k { color: #777; }
+  .v { text-align: right; word-break: break-all; }
+  .box { background: #f6f7f9; border-radius: 8px; padding: 9px 11px; margin: 9px 0; }
+  .tabs { max-height: 190px; overflow: auto; margin: 4px 0 0; }
+  .tab { display: flex; gap: 7px; padding: 4px 0; border-bottom: 1px solid #ececec; }
+  .tab:last-child { border-bottom: none; }
+  .tid { color: #999; flex: none; font-variant-numeric: tabular-nums; }
+  .ttext { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .tab.act .ttext { font-weight: 600; }
+  button {
+    width: 100%; margin-top: 8px; padding: 7px; border: 1px solid #d5d8dd;
+    background: #fff; border-radius: 7px; font: inherit; cursor: pointer;
+  }
+  button:hover { background: #f2f4f7; }
+  code { background: #eef0f3; padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+</style>
+</head>
+<body>
+  <h1><span class="dot" id="dot"></span><span id="state">检查中…</span></h1>
+
+  <div class="box">
+    <div class="row"><span class="k">桥接地址</span><span class="v"><code>127.0.0.1:8777</code></span></div>
+    <div class="row"><span class="k">已调试标签页</span><span class="v" id="attached">0</span></div>
+    <div class="row"><span class="k">最近更新</span><span class="v" id="at">—</span></div>
+  </div>
+
+  <div style="font-weight:600;margin-top:10px">当前标签页</div>
+  <div class="tabs" id="tabs"></div>
+
+  <button id="reconnect">重新连接桥接服务</button>
+  <button id="openbridge">打开桥接状态页</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>

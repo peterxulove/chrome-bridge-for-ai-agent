@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome Bridge — 智能体浏览器控制桥",
+  "version": "1.0.0",
+  "description": "把当前 Chrome 的控制权通过本地桥接服务交给本机 AI 智能体：读页面、点击、输入、截图、跑 CDP。使用你自己的登录态。",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "debugger",
+    "alarms",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Chrome Bridge"
+  }
+}

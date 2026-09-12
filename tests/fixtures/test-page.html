@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><title>Chrome Bridge 测试页</title>
+<style>
+  body{font:15px/1.8 -apple-system,"PingFang SC",sans-serif;max-width:560px;margin:48px auto;padding:0 24px;color:#111}
+  button{padding:8px 18px;font:inherit;border:1px solid #ccc;border-radius:8px;background:#f7f7f7;cursor:pointer}
+  input{padding:8px 12px;font:inherit;border:1px solid #ccc;border-radius:8px;width:260px}
+  .row{margin:14px 0}.tag{color:#888;font-size:13px}
+</style></head>
+<body>
+  <h1 id="title">Chrome Bridge 测试页</h1>
+  <p class="tag">这个页面用于验证扩展的读、点、输、截图能力。</p>
+
+  <div class="row"><button id="btn">点我一下</button></div>
+  <div class="row">按钮状态：<b id="out">未点击</b></div>
+
+  <div class="row"><input id="inp" placeholder="在这里输入"></div>
+  <div class="row">输入回显：<b id="typed">—</b></div>
+
+  <script>
+    document.getElementById('btn').addEventListener('click', () => {
+      document.getElementById('out').textContent = '按钮已被点击';
+    });
+    document.getElementById('inp').addEventListener('input', (e) => {
+      document.getElementById('typed').textContent = '输入内容：' + e.target.value;
+    });
+  </script>
+</body>
+</html>

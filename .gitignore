@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+._*
+
+# editors
+.vscode/
+.idea/
+*.swp
+
+# logs & runtime
+*.log
+npm-debug.log*
+
+# node (the project has no deps, but just in case)
+node_modules/
+package-lock.json
+
+# screenshots / scratch output produced by the CLI
+cb-shot-*.png
+cb-shot-*.jpg
